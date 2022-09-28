@@ -1,0 +1,16 @@
+frameworkVersion: '3'
+
+service: loinc-lambda
+
+provider:
+  name: aws
+  stage: dev
+  runtime: go1.x
+  httpApi:
+    payload: '2.0'
+
+functions:
+  any:
+    handler: bin/cmd
+    events:
+      - httpApi: '*'
